@@ -1,1 +1,19 @@
 https://www.hackerrank.com/contests/mountblue-technologies/challenges/compare-the-triplets
+
+function creatingTriplets(a,b){
+    let output = [];
+    var alice = 0;
+    var bob = 0, equal = 0;
+    for (let i = 0; i <= a.length; i++){
+        if (a[i] > b[i]){
+            alice += 1;
+        }else if(b[i] > a[i]){
+            bob += 1;
+        } else if (a[i] == b[i]){
+            equal++
+        }
+    }
+    output = [].concat(alice,bob);
+    return output;
+}
+console.log(creatingTriplets([1, 2, 3], [3, 2, 1]));
