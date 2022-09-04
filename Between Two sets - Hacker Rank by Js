@@ -1,0 +1,17 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/between-two-sets
+
+function getTotalX(a, b) {
+    let count = 0;
+    
+    for (let x = 1; x <= 100; x++) {
+        if (a.every(int => (x % int == 0))) {
+            if (b.every(int => (int % x == 0))) {
+                count++;
+            }
+        }
+    }
+
+    return count;
+}
+
+getTotalX([2, 4],[16, 32, 96]);
