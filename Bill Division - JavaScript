@@ -1,0 +1,18 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/bon-appetit
+function billDivison(bill,k,b){
+   var total = bill.reduce((a,b) =>
+       a+b,0);
+       let diff = 0;
+       var share = total / 2;
+       var annabill = bill.slice();
+       var copybill = annabill.splice(k,1);
+       var annatotal = annabill.reduce((a,b)=> a+b,0);
+       let annashare = annatotal / 2;
+       if(b > annashare){
+          diff = b - annashare;
+          return diff;
+       }else if(b == annashare){
+           return "Bon Appetite"
+       }
+}
+billDivison([3, 10, 2, 9], 1, 12);
