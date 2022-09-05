@@ -1,7 +1,7 @@
 https://www.hackerrank.com/contests/mountblue-technologies/challenges/reduced-string
 function str(s){
     let x = s.split("");
-    for (let i = 0; i < x.length; i++){
+    for (let i = 0; i < x.length-1; i++){
          if (x[i] === x[i+1]){
             x.splice(i,2);
             i -= 2;
