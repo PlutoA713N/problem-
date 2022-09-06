@@ -1,0 +1,9 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/a-very-big-sum
+
+function sum(x){
+    let ar = [];
+    var output = x.reduce((a,b) => a+b,0);
+    ar.push(output);
+    return ar;
+}
+sum([1000000001, 1000000002, 1000000003, 1000000004, 1000000005]);
