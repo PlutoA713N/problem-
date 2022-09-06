@@ -1,0 +1,25 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/plus-minus
+function plusMinus(arr){
+    var n = arr.length;
+    var positivenum = 0, negativenum = 0, zeros = 0;
+    for (var num of arr){
+        if (num > 0){
+            positivenum++;
+        }else if(num < 0){
+            negativenum++;
+        }else if(num == 0){
+            zeros++
+        }
+    }
+    positivenum /= n;
+    positivenum = positivenum.toFixed(6);
+    negativenum /= n;
+    negativenum = negativenum.toFixed(6);
+    zeros /= n;
+    zeros = zeros.toFixed(6);
+    //return console.log(`${(zeros)}\n${(positivenum)}\n${(negativenum)}`);
+    console.log(positivenum);
+    console.log(negativenum);
+    console.log(zeros);
+}
+plusMinus([-1, 1, -1, 0, 1]);
