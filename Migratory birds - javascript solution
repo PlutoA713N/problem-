@@ -1,0 +1,13 @@
+//https://www.hackerrank.com/contests/mountblue-technologies/challenges/migratory-birds
+function bird(arr){
+    let copy = [];
+    var x = arr.reduce((a,b)=> {
+        a[b] = (a[b] || 0) + 1;
+        return a;
+    },{});
+    let highval = Math.max(...Object.values(x));
+    let lowkey = Object.keys(x).find(key => x[key] === highval);
+    return lowkey;
+}
+bird([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]);
+//Output - 3
