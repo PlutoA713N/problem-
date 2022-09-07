@@ -1,6 +1,5 @@
 //https://www.hackerrank.com/contests/mountblue-technologies/challenges/migratory-birds
 function bird(arr){
-    let copy = [];
     var x = arr.reduce((a,b)=> {
         a[b] = (a[b] || 0) + 1;
         return a;
