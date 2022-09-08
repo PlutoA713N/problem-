@@ -1,0 +1,14 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/birthday-cake-candles
+function cake(candles){
+//console.log(candles);
+    let total = candles.reduce((a,b)=> {
+        a[b] = (a[b] || 0) + 1;
+        return a;
+    },{});
+    console.log(total);
+    let max = Math.max(...Object.keys(total));
+    let result = total[max];
+    console.log(result);
+    return result;
+}
+cake([4, 4, 1, 3])
