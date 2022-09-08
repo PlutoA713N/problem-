@@ -2,23 +2,26 @@ https://www.hackerrank.com/contests/mountblue-technologies/challenges/diagonal-d
 My solution
 function birds(ar){
     let store = 0;
+let len = ar.length - 1;
+//console.log(len)
     let set = 0,rtl = 0;
     let output1 = 0,output2 = 0;
-    for(let i = 1; i < ar.length; i++){
-        if(ar.length / i === i)
+    for(let i = 1; i < len; i++){
+        if(len / i === i)
         store = i;
         //console.log(store);
     }
+    console.log(store);
     let copy = store + 1;
     let copyx = store - 1;
-    for(let i = 0; i < store*store;){
+    for(let i = 1; i <= store*store;){
         set = set + ar[i];
         i += copy;
         //console.log(`set = ${set} arr = ${ar[i]},i = ${i}, copy = ${copy}`);
     }
     let x = store*store - 1
     //console.log(x)
-    for(let j = copyx; j < x;){
+    for(let j = store; j < x;){
         rtl += ar[j];
         j += copyx;
         //console.log(`arr = ${ar[j]},rtl = ${rtl},j = ${j},copy = ${copyx}`)
@@ -26,9 +29,11 @@ function birds(ar){
     console.log(rtl,set)
     if (set > rtl){
         output1 = set - rtl;
+        console.log(output1);
         return output1;       
     }else{
         output2 = rtl - set;
+       console.log(output2);
         return output2;
 }
 }
