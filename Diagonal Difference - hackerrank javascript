@@ -1,0 +1,54 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/diagonal-difference
+My solution
+function birds(ar){
+    let store = 0;
+    let set = 0,rtl = 0;
+    let output1 = 0,output2 = 0;
+    for(let i = 1; i < ar.length; i++){
+        if(ar.length / i === i)
+        store = i;
+        //console.log(store);
+    }
+    let copy = store + 1;
+    let copyx = store - 1;
+    for(let i = 0; i < store*store;){
+        set = set + ar[i];
+        i += copy;
+        //console.log(`set = ${set} arr = ${ar[i]},i = ${i}, copy = ${copy}`);
+    }
+    let x = store*store - 1
+    //console.log(x)
+    for(let j = copyx; j < x;){
+        rtl += ar[j];
+        j += copyx;
+        //console.log(`arr = ${ar[j]},rtl = ${rtl},j = ${j},copy = ${copyx}`)
+    }
+    console.log(rtl,set)
+    if (set > rtl){
+        output1 = set - rtl;
+        console.log(output1);
+    }else{
+        console.log(rtl - set);
+}
+}
+ birds([11, 2, 4, 4, 5, 6, 10, 8, -12])
+------------------------------------------
+ 2nd solution by coders
+function diagonalDifference(arr) {
+    var n = arr.length; 
+    var d1 = 0;
+    var d2 = 0;
+  for(var i=0; i<n; i++){
+     for(var j=0; j<n; j++){
+       // finding the sum of primary diagonal
+         if(i === j) {
+           d1 += arr[i][j];
+         }
+       // finding the sum of secondary diagonal
+         if(i + j === n - 1){
+            d2 += arr[i][j];
+         }
+      }
+  }
+  return Math.abs(d1 - d2);
+}
