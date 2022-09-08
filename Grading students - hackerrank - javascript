@@ -1,0 +1,17 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/grading
+function students(grades){
+    let multiples = [];
+    for(let i = 0; i<grades.length; i++){
+        multiples.push(Math.ceil(grades[i] / 5) * 5);
+        if(multiples[i] < 38){
+            multiples[i] = grades[i];
+        }
+        console.log(`grade = ${grades}, multiple = ${multiples}`)
+        if((multiples[i] - grades[i]) < 3){
+            grades[i] = multiples[i];
+        }
+    }
+    console.log(grades);
+    return grades;
+}
+students([84, 29, 57]);
