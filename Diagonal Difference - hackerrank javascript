@@ -26,9 +26,10 @@ function birds(ar){
     console.log(rtl,set)
     if (set > rtl){
         output1 = set - rtl;
-        console.log(output1);
+        return output1;       
     }else{
-        console.log(rtl - set);
+        output2 = rtl - set;
+        return output2;
 }
 }
  birds([11, 2, 4, 4, 5, 6, 10, 8, -12])
