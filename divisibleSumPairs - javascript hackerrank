@@ -1,0 +1,15 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/divisible-sum-pairs
+function divisibleSumPairs(n, k, arr){
+    arr.sort();
+    let output = [],counter = 0;
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 1; j < n; j++){
+            console.log(arr[i] + arr[j])
+            if(((arr[i] + arr[j]) % k) === 0 && arr[i] < arr[j]){
+                counter += 1;
+            }
+        }
+    }
+    console.log(`counter : ${counter}`);
+}
+divisibleSumPairs(6, 3, [1, 3, 2, 6,1, 2]);
