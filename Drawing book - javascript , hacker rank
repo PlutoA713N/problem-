@@ -1,0 +1,23 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/drawing-book
+
+
+function book(n,p){
+    let flips = 0;
+    let totalflips = Math.floor(n / 2);
+    let equalflips = Math.ceil(totalflips / 2);
+    let pageflips = Math.floor(p / 2);
+    let diff = totalflips - pageflips;
+    let ans = diff - 1;
+    if(totalflips == pageflips){
+        console.log(0);
+        return 0;
+    }else if(pageflips < equalflips){
+        console.log(pageflips)
+        return pageflips;
+    }else if(pageflips === equalflips){
+        console.log(pageflips)
+        return pageflips;
+    }
+     console.log(`total : ${totalflips},e : ${equalflips}, pageflips : ${pageflips}, diff = ${diff}`);  
+}
+book(5,3);
