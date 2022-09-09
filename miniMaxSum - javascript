@@ -1,0 +1,13 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/mini-max-sum/submissions/code/1348382629
+function miniMaxSum(arr){
+    arr.sort();
+    let max = 0; min = 0;
+    for(let i = 0; i < arr.length - 1; i++){
+        min += arr[i];
+    }
+        for(let j = 1; j < arr.length; j++){
+            max += arr[j];
+    }
+    return min,max;
+}
+miniMaxSum([1, 2, 3, 4, 5]);
