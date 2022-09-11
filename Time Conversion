@@ -1,0 +1,25 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/time-conversion/submissions/code/1348468239
+function time(s){
+    let ar = s.slice(0,8).split(':');
+    ar[0] = (s.includes('PM')) ? (ar[0] == 12 ? '12' : Number(ar[0]) + 12) : (arr[0] == 12 ? '00' : ar[0]);
+    let output = ar.join(':');
+    return output;
+    
+}
+time('07:05:45PM');
+
+Updated code to avoid runtime error in Java script
+function time(s){
+ let ar = s.slice(0,8).split(':');
+    if(s.includes("PM") && ar[0] < 12){
+        ar[0] = Number(ar[0]) + 12;
+    }
+    if(s.includes("AM") && ar[0] == 12){
+        ar[0] = '00';
+    }
+    let output = ar.join(':');
+    console.log(output);
+    return output;
+}
+time('12:05:45AM')
+console.log("Welcome to Programiz!");
