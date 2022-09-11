@@ -1,0 +1,42 @@
+
+
+My code
+function library(d1, m1, y1, d2, m2, y2){
+    let fine = 0;
+    if(d1 < d2 && (m1 <= m2 && y1 <= y2){
+        return fine;
+    }
+    if(d1 > d2 && (m1 === m2 && y1 === y2)){
+        fine = (d1 - d2) * 15;
+        console.log(fine);
+        return fine;
+    }else if(m1 > m2 && y1 === y2){
+        fine = (m1 - m2) * 500;
+        console.log(fine);
+        return fine;
+    }else if(y1 > y2){
+        fine = 100000;
+        console.log(fine);
+        return fine;
+    } 
+    console.log(fine);
+    return fine;
+}
+library(14, 7, 2018, 5, 7, 2018);
+//3 cases failed
+
+Other coders solution
+function libraryFine(d1, m1, y1, d2, m2, y2) {
+    // if   (y1 == y2 && m1 == m2 && d1 == d2) {
+    //     return 0;
+    // } else 
+    if (y1 === y2 && m1 === m2 && d1 > d2) {
+        return (15 * (d1 - d2));
+    } else if (y1 === y2 && m1 > m2) {
+        return (500 * (m1 - m2));
+    } else if (y1 > y2) {
+        return 10000;
+    } else if (y1 <= y2 || m1 <= m2 || d1 <= d2) {
+        return 0;
+    }
+    }
