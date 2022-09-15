@@ -1,0 +1,12 @@
+  https://www.hackerrank.com/contests/mountblue-technologies/challenges/the-hurdle-race/leaderboard
+function hurdles(k, height){
+     let maxheight = Math.max(...height)
+     //console.log(maxheight)
+    if(maxheight > k){
+         return(maxheight - k)
+     } else {
+         console.log(0);
+         return 0;
+ }
+ }
+ hurdles(4, [1, 6, 3, 5, 2]);
