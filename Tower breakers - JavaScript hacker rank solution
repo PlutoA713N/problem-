@@ -1,0 +1,12 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/tower-breakers-1/submissions/code/1348688314
+
+function tower(n, m){
+   let player1 = 1, player2 = 2;
+    if(n % 2 == 0 || m == 1){
+        console.log(2);
+        return player2;
+    }else {
+        console.log(player1);
+        return 1;
+    }
+tower(1, 4);
