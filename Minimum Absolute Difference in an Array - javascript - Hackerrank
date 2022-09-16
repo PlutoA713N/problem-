@@ -1,0 +1,31 @@
+function min_diff(arr){
+    let store = [],diff = 0;
+    arr.sort((a,b) => a-b);
+    for(let i = 0; i < arr.length; i++){
+        diff = (arr[i] - arr[i+1]);
+        store.push(diff)
+        //console.log(`arr = ${arr}, diff = ${diff}, store = ${store}`)
+    }
+    let x = store.filter(Number)
+    let y = x.map((x) => Math.abs(x))
+    y.sort((a,b) => a-b);
+    console.log(`x = ${x}, mathabs = ${y}`)
+    return y[0];
+}
+min_diff([-59, -36, -13, 1, -53, -92, -2, -96, -54, 75])96, -54, 75])
+
+
+
+
+#Modified code
+function min_diff(arr){
+    let store = [],diff = 0;
+    arr.sort((a,b) => a-b);
+    for(let i = 0; i < arr.length-1; i++){
+        diff = Math.abs(arr[i] - arr[i+1]);
+        store.push(diff);
+        console.log(Math.min(...store))
+    }
+    return (Math.min(...store));
+}
+min_diff([3, -7, 0])
