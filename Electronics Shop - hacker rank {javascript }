@@ -1,0 +1,43 @@
+#My code takes too much time to execute 
+function store(keyboards, drives, b){
+    let tally = [],sum = 0, output = 0;
+    for(let i = 0;i < keyboards.length; i++){
+        for(let j = 0; j < drives.length; j++){
+            sum = keyboards[i] + drives[j];
+            tally.push(sum);
+            tally = tally.filter((x) => x <= b);
+            output = tally.sort((a,b)=> b-a)
+        }
+            }
+    if(output[0] <= b){
+        var result = output[0];
+        return result;
+    } else {
+        return -1;
+}
+}
+}
+    
+store(
+[4],
+[5], [5])
+
+Here is the better code for another programmer
+
+function getMoneySpent(keyboards, drives, b) {
+    /*
+     * Write your code here.
+     */
+    let max = -1;
+     
+    for(let i = 0; i < keyboards.length; i++) {
+        const keyboardPrice = keyboards[i];
+        for(let j = 0; j < drives.length; j++) {
+            const drivePrice = drives[j];
+            if (keyboardPrice + drivePrice <= b && keyboardPrice + drivePrice > max) {
+                max = keyboardPrice + drivePrice;
+            }
+        }
+    }
+    return max;
+}
