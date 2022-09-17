@@ -1,0 +1,47 @@
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/mars-exploration/submissions/code/1348842026
+function mars(s){
+    let a = s.match(/S/g)
+    let b = s.match(/O/g)
+    let totalmsg = a.length + b.length;
+    let error = s.length - totalmsg;
+    
+    return error;
+    console.log(a,b,error);
+    
+}
+mars("SOSSOSSOS");
+# I counted the unknown characters by subtracting the known ('S' & 'O') characters from length
+
+
+Other coder program
+Other coders..solved by check the each character is at its own position, if not  and if unknown characters are present they counted the characters
+ 
+
+function marsExploration(message) {
+        let sos = "SOS";
+        let count = 0;
+        for (let i = 0; i < message.length; i++) {
+            if (message.charAt(i) != sos.charAt(i % 3)) count++;
+        }
+        return count;
+    } 
+
+
+||
+
+
+let count = 0;
+    for(let i = 0; i < s.length; i+3){
+        if(s.charAt(i) !== 'S'){ 
+            count++;
+        }
+        if(s.charAt(i+1) !== 'O'){
+            count++;
+        }
+        if(s.charAt(i+2) !== 'S'){
+            count++;
+        }
+    }
+    console.log(count);
+    return count;
+ 
