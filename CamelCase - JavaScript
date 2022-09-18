@@ -1,0 +1,12 @@
+//funnily wasted lot of time for this program by thinking the possible solution in regex
+
+function string(s){
+    let counter = 1;
+    for(let i= 0;i<s.length;i++){
+        if(s[i] == s[i].toUpperCase()){
+            counter++;
+        }
+    }
+    return (counter)
+}
+string("aCamelCaseBoy");
