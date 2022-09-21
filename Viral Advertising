@@ -1,0 +1,25 @@
+#Solved it by using Recursion first time , tbh copied the code..
+https://www.hackerrank.com/contests/mountblue-technologies/challenges/strange-advertising/problem
+
+function viralAdvertising(n,total = 5){
+    if(n == 1)
+    return Math.floor(total/2);
+    total = Math.floor(total/2);
+    return total+viralAdvertising(n-1,total*3);
+    
+}
+viralAdvertising(5);
+
+
+By using loops
+
+function viralAdvertising(n) {
+
+    let shared = 5, like = 0, totalLikes = 0;
+    for (let i = 1; i <= n; i++) {
+        like = Math.floor(shared / 2);
+        shared = like * 3;
+        totalLikes += like;
+    }
+    return totalLikes;
+}
