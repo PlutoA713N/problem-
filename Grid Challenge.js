@@ -1,3 +1,4 @@
+#First two programs are failed... for few cases
 function gridChallenge(grid){
     var ar = [];
     var store = (grid.map((x) => x.split("").sort().join("")));
