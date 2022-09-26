@@ -1,0 +1,12 @@
+function angryProfessor(k ,a){
+   let lateStudents = a.filter((x) => x > 0).length;
+    let earlyStudents = a.filter((y) => y <= 0).length;
+    if(earlyStudents >= k){
+        console.log("n")
+        return "NO"
+    }
+    console.log(lateStudents,earlyStudents)
+    console.log("y")
+    return "YES";
+}
+angryProfessor(3,[-1, 0, -2, 4, 2]);
