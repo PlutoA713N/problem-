@@ -1,0 +1,33 @@
+function equalizeArray(arr){
+    let len = arr.length;
+  let counter =  arr.reduce((a,b)=>{
+     a[b] = ++a[b] || 1;
+     return a;
+    },{})
+    let a = (Math.max(...Object.values(counter)))
+    //let b = counter[a];
+    return (len-a);
+}
+equalizeArray([1,2,2,3]);
+
+
+Other coder
+function equalizeArray(arr) {
+    let max = 0;
+    let values = arr.reduce((target, value, index) => { 
+        target[value] = (target[value] || 0) + 1;
+
+        target[value] > max && (max = target[value]);
+
+        return target;
+    }, []);
+
+    return arr.length - max;
+}
+#
+ALGORITHM
+,
+ES6
+,
+HACKERRANK
+,
