@@ -1,4 +1,5 @@
-//not yet finished
+//not yet finished 
+//Done
 
 function howManyGames(p,d,m,s){
     var i = d,counter = 1;
@@ -23,3 +24,17 @@ function howManyGames(p,d,m,s){
     return counter;
 }
 howManyGames(20,3,6,85);
+
+Other coder solution: simple n neat
+function howManyGames(p, d, m, s) {
+        // Return the number of games you can buy
+        let sum = 0, count = -1;
+        while(sum <= s) {
+            sum += p <= m ? m : p;
+            p -= d;
+            count++;
+        }
+        return count;
+    }
+ 
+ 
