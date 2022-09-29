@@ -1,5 +1,6 @@
 //not yet finished 
 //Done
+//My code failed for 3 cases...my conditions are  too much and looks little confusing and dirty..need improvement
 
 function howManyGames(p,d,m,s){
     var i = d,counter = 1;
