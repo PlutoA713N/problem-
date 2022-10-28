@@ -36,3 +36,60 @@ function timeInWords(h, m){
    return s;
 }
 timeInWords(7,47)
+
+
+function timeInWords(h, m){
+    let num = ("zero,one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,twenty,twenty one,twenty two,twenty three,twenty four,twenty five,twenty six,twenty seven,twenty eight, twenty nine").split(",")
+   let s = m == 0 ? `${num[h]} o' clock`: m == 15 ? `quarter past ${num[h]}`: m == 30 ? `half past ${num[h]}`: m == 45 ? `quarter to ${num[h+1]}`: m < 30 ? `${num[m]} minutes past ${num[h]}`: m > 30 ? `${num[60-m]} minutes to ${num[h]}` : 0;
+   return s;
+}
+timeInWords(7,47)
+
+
+// Complete the timeInWords function below.
+function timeInWords(h, m) {
+  let words = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+    "eleven",
+    "twelve",
+    "thirteen",
+    "fourteen",
+    "fifteen",
+    "sixteen",
+    "seventeen",
+    "eightteen",
+    "nineteen",
+    "twenty",
+    "twenty one",
+    "twenty two",
+    "twenty three",
+    "twenty four",
+    "twenty five",
+    "twenty six",
+    "twenty seven",
+    "twenty eight",
+    "twenty nine"
+  ];
+
+  return !m
+    ? `${words[h]} o' clock`
+    : `${
+        !(m % 30)
+          ? "half"
+          : !(m % 15)
+          ? "quarter"
+          : `${m <= 30 ? words[m] : words[60 - m]} ${`minute${
+              m > 1 ? "s" : ""
+            }`}`
+      } ${m <= 30 ? "past" : "to"} ${words[m <= 30 ? h : h + 1]}`;
+}
