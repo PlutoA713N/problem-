@@ -28,3 +28,11 @@ function timeInWords(h, m) {
         return s += (`${double_digits[0]} ${num[i[1]-1]} ${min} ${after} ${num[h]}`)
     }
   }
+
+//Take as much time to understand question everything is interlinked, else you gonna end up writing inefficient code n wasting time on planning n thinking
+function timeInWords(h, m){
+    let num = ("zero,one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fiftenn,sixteen,seventeen,eighteen,nineteen,twenty,twentyone,twentytwo,twentythree,twentyfour,twentyfive,twentysix,twentyseven,twentyeight, twentynine").split(",")
+   let s = m == 0 ? `${num[h]} o' clock`: m == 15 ? `quarter past ${num[h]}`: m == 30 ? `half past ${num[h]}`: m == 45 ? `quarter to ${num[h+1]}`: m < 30 ? `${num[m]} minutes past ${num[h]}`: m > 30 ? `${num[60-m]} minutes to ${num[h]}` : 0;
+   return s;
+}
+timeInWords(7,47)
