@@ -1,10 +1,10 @@
 https://www.hackerrank.com/contests/mountblue-technologies/challenges/reduced-string
 function str(s){
     let x = s.split("");
-    for (let i = 0; i < x.length-1; i++){
+    for (let i = 0; i < x.length; i++){
          if (x[i] === x[i+1]){
             x.splice(i,2);
-            i -= 2;
+            i = -1;
         }
     }
     return x.length ? x.join("") : "Empty String";
