@@ -1,4 +1,18 @@
 https://www.hackerrank.com/contests/mountblue-technologies/challenges/mars-exploration/submissions/code/1348842026
+
+//Updated code
+let ar = (s.split(/(.{3})/g).filter(o => o))
+return ar.reduce((acc,val,ind)=>{
+   let i = val.match(/.{1}/g)
+   !(i[0] == 'S') && acc++
+   !(i[1] == 'O') && acc++
+   !(i[2] == 'S') && acc++
+   return acc;
+   //console.log(i)
+},0)
+
+
+
 function mars(s){
     let a = s.match(/S/g)
     let b = s.match(/O/g)
