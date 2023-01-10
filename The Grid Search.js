@@ -55,3 +55,85 @@ function gridSearch(G: string[], P: string[]): string {
 
   return 'NO';
 }
+
+
+other codes
+
+
+
+function gridSearch(G, P) {
+let gl  = G.length;
+let gw = G[0].length;
+let pl = P.length;
+let pw = P[0].length;
+
+for(let i=0;i<=gl-pl;i++)
+{
+    for(let j=0;j<=gw-pw;j++)
+    {
+        if(G[i][j] == P[0][0])
+        {
+            let m = i,n=j;
+            let flag =1;
+            for(let a=0;a<pl;a++)
+            {
+                for(let b = 0;b<pw;b++)
+                {
+                    if(P[a][b] != G[m+a][n+b])
+                    {
+                        flag = 0;
+                        break;
+                    }
+                }
+                if(!flag)
+                break;
+            }
+            if(flag)
+            return "YES";
+        }
+    }
+}
+return "NO";
+}
+
+
+function findAllIndexes(s, p) {
+    let k, indexes = {}, j;
+    for(let i = 0; i < s.length; i++) {
+        k = i, j = 0;
+        while(k < s.length && s[k] === p[j]) {
+            k++;
+            j++;
+        }
+
+        if(j == p.length) indexes[k - p.length] = k - p.length; 
+    }
+    return indexes;
+}
+
+function gridSearch(G, P) {
+    let index, indexes, j = 0;
+    P = P.filter((item) => item != undefined);
+
+    for(let i = 0; i < G.length - 1; i++) {
+        indexes = findAllIndexes(G[i], P[j]);
+        index = G[i + 1].indexOf(P[j + 1]);
+        if(indexes[index] != undefined) {
+            j++;
+        } else j = 0;
+        if(j + 1 == P.length) return 'YES';        
+    }
+    return 'NO';
+}
+
+
+function gridSearch(G, P) {
+    return G.some((str, i) => {
+        if(i > G.length - P.length) return false;
+        for(let j = 0; j <= str.length - P[0].length; j++) {
+            if(P.every((p_k, k) => {
+                return G[i + k].slice(j, j + p_k.length) === p_k;
+            })) return true;
+        }
+    }) ? 'YES' : 'NO';
+}
